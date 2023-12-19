@@ -10,6 +10,8 @@ public class BSTNode {
         this.left = this.right = null;
     }
 
+
+
     public void insert(int key, String value) {
         if (key < this.key) {
             if (left == null) {
@@ -81,6 +83,17 @@ public class BSTNode {
             System.out.println("Key: " + root.key + ", Value: " + root.value);
             traverseInOrder(root.right);
         }
+    }
+
+    public int countNodes() {
+        return countNodes(this);
+    }
+
+    private int countNodes(BSTNode node) {
+        if (node == null) {
+            return 0;
+        }
+        return 1 + countNodes(node.left) + countNodes(node.right);
     }
 }
 
