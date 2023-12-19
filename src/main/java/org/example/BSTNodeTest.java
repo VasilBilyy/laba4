@@ -28,5 +28,17 @@ public class BSTNodeTest {
 
         // Тесткейс 2
         Assert.assertEquals(20, root.countNodes());
+
+        // Тесткейс 3
+        for (int key : mapData.keySet()) {
+            String expectedValue = mapData.get(key);
+            String actualValue = root.search(key);
+            Assert.assertEquals(expectedValue, actualValue);
+        }
+
+        int nonExistingKey = 100;
+        Assert.assertNull(root.search(nonExistingKey));
+
+
     }
 }
