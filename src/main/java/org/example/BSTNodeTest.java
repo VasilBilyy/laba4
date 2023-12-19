@@ -39,7 +39,7 @@ public class BSTNodeTest {
         int nonExistingKey = 100;
         Assert.assertNull(root.search(nonExistingKey));
 
-
+        // Тесткейс 4
         int keyToRemove = 10;
         root.delete(keyToRemove);
 
@@ -52,5 +52,9 @@ public class BSTNodeTest {
         root.insert(existingKey, differentValue);
         Assert.assertEquals(20, root.countNodes());
 
+        // Тесткейс 5
+        root.delete(keyToRemove);
+        Assert.assertNull(root.search(keyToRemove));
+        Assert.assertEquals(19, root.countNodes());
     }
 }
