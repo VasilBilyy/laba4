@@ -40,5 +40,17 @@ public class BSTNodeTest {
         Assert.assertNull(root.search(nonExistingKey));
 
 
+        int keyToRemove = 10;
+        root.delete(keyToRemove);
+
+        String newValue = "NewValue";
+        root.insert(keyToRemove, newValue);
+        Assert.assertEquals(newValue, root.search(keyToRemove));
+
+        int existingKey = mapData.keySet().iterator().next();
+        String differentValue = "DifferentValue";
+        root.insert(existingKey, differentValue);
+        Assert.assertEquals(20, root.countNodes());
+
     }
 }
